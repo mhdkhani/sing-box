@@ -13,9 +13,6 @@ https://github.com/iSegaro/Sing-Box
 ```bash
 ./run-sing-box.sh -h
 
-defualt port: 1445
-
-defualt SNI: www.speedtest.net
 ```
 
 
@@ -41,10 +38,10 @@ Fedora 37
 # install xray base on sing-box core
 ./run-sing-box.sh -i
 
-# change default port
+# change default port (defualt port: 1445)
 ./run-sing-box.sh -p
 
-# change default sni
+# change default sni (defualt SNI: www.speedtest.net)
 ./run-sing-box.sh -s
 
 # create new user
