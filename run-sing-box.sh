@@ -71,13 +71,14 @@ newUserScript() {
     touch $newPort/public_key.txt
     touch $newPort/short_id.txt
     touch $newPort/uuid.txt
-
+    touch $newPort/sni.txt
 
     echo  ${arrIN[1]} > $newPort/private_key.txt
     echo  ${arrIN[3]} > $newPort/public_key.txt
     echo  $myShortId > $newPort/short_id.txt
     echo  $uid > $newPort/uuid.txt
-
+    echo  $defaultSni > $newPort/sni.txt
+    
     link="vless://$uid@$ip4:$newPort/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=$defaultSni&fp=chrome&security=reality&pbk=${arrIN[3]}&sid=$myShortId#$newPort"
     echo $link
     echo ""    
