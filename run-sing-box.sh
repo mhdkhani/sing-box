@@ -140,7 +140,7 @@ function showUser(){
   public_key=`cat $port/public_key.txt`
   short_id=`cat $port/short_id.txt`
   uid=`cat $port/uuid.txt`
-  defaultSni=`cat default_sni.txt`
+  defaultSni=`cat $port/sni.txt`
 
   link="vless://$uid@$ip4:$port/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=$defaultSni&fp=chrome&security=reality&pbk=$public_key&sid=$short_id#$port"
   echo $link
