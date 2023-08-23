@@ -1,7 +1,7 @@
 #!/bin/bash
 
 helpScript() {
-    echo "script usage:  [-i: install script] [-h: help] [-c: create new user] [-d: delete user] [-a: active user] [-u: show user]  [-p: change port] [-s: change sni]"
+    echo "script usage:  [-i: install script] [-h: help] [-c: create new user] [-d: delete user] [-a: active user] [-u: show user]  [-p: change port] [-s: change sni] [-m: change user sni]"
 }
 
 getIpAddress(){
@@ -150,7 +150,13 @@ function showUser(){
   qrencode -t ansiutf8 "${link}"
 
 }
-
+function updateUser(){
+    read -p "Enter user port: " port
+    read -p "Enter new sni: " sni
+    echo  $sni > $port/sni.txt
+    echo $port
+    echo $sni
+}
 while getopts 'ihcdpsau' OPTION; do
   case "$OPTION" in
     i)
@@ -177,8 +183,11 @@ while getopts 'ihcdpsau' OPTION; do
      u)
        showUser
      ;;
+     m)
+      updateUser
+     ;;
     ?)
-      echo "script usage:  [-i: install script] [-h: help] [-c: create new user] [-d: delete user] [-a: active user] [-u: show user]  [-p: change port] [-s: change sni]" >&2
+      echo "script usage:  [-i: install script] [-h: help] [-c: create new user] [-d: delete user] [-a: active user] [-u: show user]  [-p: change port] [-s: change sni] [-m: change user sni]" >&2
       exit 1
       ;;
   esac
