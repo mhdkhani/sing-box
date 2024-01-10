@@ -37,7 +37,7 @@ installScript() {
     echo "www.speedtest.net" > default_sni.txt
  
 
-    curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.3.0/sing-box-1.3.0-linux-amd64.tar.gz && tar -xzf /root/sb && cp -f /root/sing-box-*/sing-box /root && rm -r /root/sb /root/sing-box-* && chown root:root /root/sing-box && chmod +x /root/sing-box
+    curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.8.0/sing-box-1.8.0-linux-amd64.tar.gz && tar -xzf /root/sb && cp -f /root/sing-box-*/sing-box /root && rm -r /root/sb /root/sing-box-* && chown root:root /root/sing-box && chmod +x /root/sing-box
 
    curl -Lo /root/sing-box_config.json https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json
 
